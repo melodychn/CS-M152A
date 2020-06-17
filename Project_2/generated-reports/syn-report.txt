@@ -1,0 +1,367 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Reading design: FPCVT.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "FPCVT.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "FPCVT"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : FPCVT
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/melody/152a/Project_2_combined/FPCVT.v" into library work
+Parsing module <convertToSignMagnitude>.
+Parsing module <countLeadingZeroExtractBits>.
+Parsing module <round>.
+Parsing module <FPCVT>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <FPCVT>.
+
+Elaborating module <convertToSignMagnitude>.
+WARNING:HDLCompiler:413 - "/home/melody/152a/Project_2_combined/FPCVT.v" Line 32: Result of 32-bit expression is truncated to fit in 13-bit target.
+
+Elaborating module <countLeadingZeroExtractBits>.
+
+Elaborating module <round>.
+WARNING:HDLCompiler:413 - "/home/melody/152a/Project_2_combined/FPCVT.v" Line 111: Result of 6-bit expression is truncated to fit in 5-bit target.
+WARNING:HDLCompiler:413 - "/home/melody/152a/Project_2_combined/FPCVT.v" Line 117: Result of 4-bit expression is truncated to fit in 3-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <FPCVT>.
+    Related source file is "/home/melody/152a/Project_2_combined/FPCVT.v".
+    Summary:
+	no macro.
+Unit <FPCVT> synthesized.
+
+Synthesizing Unit <convertToSignMagnitude>.
+    Related source file is "/home/melody/152a/Project_2_combined/FPCVT.v".
+    Found 32-bit adder for signal <n0010> created at line 32.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
+Unit <convertToSignMagnitude> synthesized.
+
+Synthesizing Unit <countLeadingZeroExtractBits>.
+    Related source file is "/home/melody/152a/Project_2_combined/FPCVT.v".
+WARNING:Xst:647 - Input <signMagnitude<12:12>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	inferred  20 Multiplexer(s).
+Unit <countLeadingZeroExtractBits> synthesized.
+
+Synthesizing Unit <round>.
+    Related source file is "/home/melody/152a/Project_2_combined/FPCVT.v".
+    Found 5-bit adder for signal <significand[4]_GND_4_o_add_2_OUT> created at line 111.
+    Found 3-bit adder for signal <exponent[2]_GND_4_o_add_4_OUT> created at line 117.
+    Found 5-bit adder for signal <n0027> created at line 118.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   8 Multiplexer(s).
+Unit <round> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 3-bit adder                                           : 1
+ 32-bit adder                                          : 1
+ 5-bit adder                                           : 1
+# Multiplexers                                         : 30
+ 1-bit 2-to-1 multiplexer                              : 7
+ 13-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 9
+ 5-bit 2-to-1 multiplexer                              : 12
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 13-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 5-bit adder                                           : 1
+# Multiplexers                                         : 30
+ 1-bit 2-to-1 multiplexer                              : 7
+ 13-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 9
+ 5-bit 2-to-1 multiplexer                              : 12
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <FPCVT> ...
+
+Optimizing unit <convertToSignMagnitude> ...
+
+Optimizing unit <round> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block FPCVT, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : FPCVT.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 88
+#      GND                         : 1
+#      INV                         : 11
+#      LUT1                        : 1
+#      LUT2                        : 2
+#      LUT4                        : 6
+#      LUT5                        : 6
+#      LUT6                        : 37
+#      MUXCY                       : 11
+#      VCC                         : 1
+#      XORCY                       : 12
+# IO Buffers                       : 22
+#      IBUF                        : 13
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                   63  out of   9112     0%  
+    Number used as Logic:                63  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     63
+   Number with an unused Flip Flop:      63  out of     63   100%  
+   Number with an unused LUT:             0  out of     63     0%  
+   Number of fully used LUT-FF pairs:     0  out of     63     0%  
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of    232     9%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 13.908ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 24324 / 9
+-------------------------------------------------------------------------
+Delay:               13.908ns (Levels of Logic = 10)
+  Source:            D<12> (PAD)
+  Destination:       E<1> (PAD)
+
+  Data Path: D<12> to E<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            14   1.222   1.062  D_12_IBUF (D_12_IBUF)
+     LUT6:I4->O           12   0.203   1.253  mod1/linear_encoding[12]_PWR_2_o_equal_1_o<0>1 (mod1/linear_encoding[12]_PWR_2_o_equal_1_o<0>)
+     LUT6:I1->O           18   0.203   1.394  mod1/Mmux_sign_magnitude121 (sign_magnitude<8>)
+     LUT6:I1->O            1   0.203   0.944  mod2/Mmux_significand82 (mod2/Mmux_significand81)
+     LUT6:I0->O            1   0.203   0.808  mod2/Mmux_significand85_SW0 (N14)
+     LUT6:I3->O            6   0.205   0.745  mod2/Mmux_significand85 (significand<2>)
+     LUT2:I1->O            2   0.205   0.721  mod3/Mmux_F5321 (mod3/Mmux_F532)
+     LUT6:I4->O            2   0.203   0.981  mod3/Mmux_E221 (mod3/Mmux_E22)
+     LUT6:I0->O            1   0.203   0.579  mod3/Mmux_E21 (E_1_OBUF)
+     OBUF:I->O                 2.571          E_1_OBUF (E<1>)
+    ----------------------------------------
+    Total                     13.908ns (5.421ns logic, 8.487ns route)
+                                       (39.0% logic, 61.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 4.95 secs
+ 
+--> 
+
+
+Total memory usage is 386792 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
+

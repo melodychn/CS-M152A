@@ -1,0 +1,235 @@
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : parking_meter.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1806
+#      GND                         : 1
+#      INV                         : 56
+#      LUT1                        : 61
+#      LUT2                        : 41
+#      LUT3                        : 58
+#      LUT4                        : 93
+#      LUT5                        : 186
+#      LUT6                        : 707
+#      MUXCY                       : 284
+#      MUXF7                       : 15
+#      VCC                         : 1
+#      XORCY                       : 303
+# FlipFlops/Latches                : 63
+#      FD                          : 4
+#      FDE                         : 37
+#      FDR                         : 17
+#      FDSE                        : 5
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 52
+#      IBUF                        : 7
+#      OBUF                        : 45
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              63  out of  18224     0%  
+ Number of Slice LUTs:                 1202  out of   9112    13%  
+    Number used as Logic:              1202  out of   9112    13%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1223
+   Number with an unused Flip Flop:    1160  out of   1223    94%  
+   Number with an unused LUT:            21  out of   1223     1%  
+   Number of fully used LUT-FF pairs:    42  out of   1223     3%  
+   Number of unique control sets:         8
+
+IO Utilization: 
+ Number of IOs:                          53
+ Number of bonded IOBs:                  53  out of    232    22%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 63    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 20.233ns (Maximum Frequency: 49.424MHz)
+   Minimum input arrival time before clock: 4.097ns
+   Maximum output required time after clock: 21.435ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 20.233ns (frequency: 49.424MHz)
+  Total number of paths / destination ports: 27095554062 / 121
+-------------------------------------------------------------------------
+Delay:               20.233ns (Levels of Logic = 23)
+  Source:            time_left_12_1 (FF)
+  Destination:       led_seg_6 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: time_left_12_1 to led_seg_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.447   1.059  time_left_12_1 (time_left_12_1)
+     LUT5:I0->O           17   0.203   1.256  time_left[13]_PWR_1_o_div_163_OUT<5>111 (time_left[13]_PWR_1_o_div_163_OUT<5>11)
+     LUT5:I2->O            9   0.205   0.829  time_left[13]_PWR_1_o_div_163_OUT<6>11 (time_left[13]_PWR_1_o_div_163_OUT<6>)
+     MUXCY:DI->O           1   0.145   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<6> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<7> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<7>)
+     XORCY:CI->O           8   0.180   0.803  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_xor<8> (time_left[13]_PWR_1_o_mod_164/a[13]_GND_2_o_add_17_OUT<8>)
+     LUT5:I4->O            4   0.205   0.683  time_left[13]_PWR_1_o_mod_164/Mmux_a[8]_a[13]_MUX_288_o11 (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_lut<8>)
+     MUXCY:DI->O           1   0.145   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<8> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<9> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<9>)
+     XORCY:CI->O           9   0.180   0.830  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_xor<10> (time_left[13]_PWR_1_o_mod_164/a[13]_GND_2_o_add_19_OUT<10>)
+     LUT6:I5->O           18   0.205   1.050  time_left[13]_PWR_1_o_mod_164/Mmux_a[10]_a[13]_MUX_300_o11 (time_left[13]_PWR_1_o_mod_164/a[10]_a[13]_MUX_300_o)
+     LUT6:I5->O            2   0.205   0.617  time_left[13]_PWR_1_o_mod_164/BUS_0011_INV_179_o2_SW4_SW0_SW0 (N816)
+     LUT6:I5->O           16   0.205   1.005  time_left[13]_PWR_1_o_mod_164/Mmux_a[5]_a[13]_MUX_319_o11 (time_left[13]_PWR_1_o_mod_164/a[5]_a[13]_MUX_319_o)
+     LUT6:I5->O            1   0.205   0.684  time_left[13]_PWR_1_o_mod_164/BUS_0012_INV_194_o2_SW0_SW4 (N917)
+     LUT6:I4->O            6   0.203   1.109  time_left[13]_PWR_1_o_mod_164/Mmux_a[4]_a[13]_MUX_334_o11 (time_left[13]_PWR_1_o_mod_164/a[4]_a[13]_MUX_334_o)
+     LUT6:I0->O           18   0.203   1.050  time_left[13]_PWR_1_o_mod_164/BUS_0013_INV_209_o2_SW0 (N62)
+     LUT6:I5->O            3   0.205   0.898  time_left[13]_PWR_1_o_mod_164/Mmux_a[8]_a[13]_MUX_344_o11 (time_left[13]_PWR_1_o_mod_164/a[8]_a[13]_MUX_344_o)
+     LUT6:I2->O            3   0.203   0.651  time_left[13]_PWR_1_o_mod_164/BUS_0014_INV_224_o21 (time_left[13]_PWR_1_o_mod_164/BUS_0014_INV_224_o2)
+     LUT6:I5->O            2   0.205   0.721  time_left[13]_PWR_1_o_mod_164/Mmux_a[0]_a[13]_MUX_366_o131 (time_left[13]_PWR_1_o_mod_164/a[3]_a[13]_MUX_363_o)
+     LUT6:I4->O            3   0.203   0.651  time_left[13]_PWR_1_o_mod_164/BUS_0015_INV_239_o23 (time_left[13]_PWR_1_o_mod_164/BUS_0015_INV_239_o22)
+     LUT6:I5->O           11   0.205   1.111  time_left[13]_PWR_1_o_mod_164/Mmux_o21 (val3_1_OBUF)
+     LUT6:I3->O            1   0.205   0.000  Mmux_led_seg[6]_led_seg[6]_mux_279_OUT74_SW0_SW0_SW0_SW1_G (N1488)
+     MUXF7:I1->O           1   0.140   0.580  Mmux_led_seg[6]_led_seg[6]_mux_279_OUT74_SW0_SW0_SW0_SW1 (N1124)
+     LUT6:I5->O            1   0.205   0.000  Mmux_led_seg[6]_led_seg[6]_mux_279_OUT75 (led_seg[6]_led_seg[6]_mux_279_OUT<6>)
+     FDE:D                     0.102          led_seg_6
+    ----------------------------------------
+    Total                     20.233ns (4.647ns logic, 15.586ns route)
+                                       (23.0% logic, 77.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 49 / 33
+-------------------------------------------------------------------------
+Offset:              4.097ns (Levels of Logic = 4)
+  Source:            add3 (PAD)
+  Destination:       current_state_FSM_FFd4 (FF)
+  Destination Clock: clk rising
+
+  Data Path: add3 to current_state_FSM_FFd4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.222   0.755  add3_IBUF (add3_IBUF)
+     LUT4:I2->O            1   0.203   0.580  current_state_FSM_FFd4-In1 (current_state_FSM_FFd4-In1)
+     LUT5:I4->O            1   0.205   0.827  current_state_FSM_FFd4-In2 (current_state_FSM_FFd4-In2)
+     LUT6:I2->O            1   0.203   0.000  current_state_FSM_FFd4-In3 (current_state_FSM_FFd4-In)
+     FDR:D                     0.102          current_state_FSM_FFd4
+    ----------------------------------------
+    Total                      4.097ns (1.935ns logic, 2.162ns route)
+                                       (47.2% logic, 52.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 3038580636 / 45
+-------------------------------------------------------------------------
+Offset:              21.435ns (Levels of Logic = 23)
+  Source:            time_left_12_1 (FF)
+  Destination:       val3<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: time_left_12_1 to val3<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.447   1.059  time_left_12_1 (time_left_12_1)
+     LUT5:I0->O           17   0.203   1.256  time_left[13]_PWR_1_o_div_163_OUT<5>111 (time_left[13]_PWR_1_o_div_163_OUT<5>11)
+     LUT5:I2->O            9   0.205   0.829  time_left[13]_PWR_1_o_div_163_OUT<6>11 (time_left[13]_PWR_1_o_div_163_OUT<6>)
+     MUXCY:DI->O           1   0.145   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<6> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<7> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_cy<7>)
+     XORCY:CI->O           8   0.180   0.803  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_17_OUT_Madd_xor<8> (time_left[13]_PWR_1_o_mod_164/a[13]_GND_2_o_add_17_OUT<8>)
+     LUT5:I4->O            4   0.205   0.683  time_left[13]_PWR_1_o_mod_164/Mmux_a[8]_a[13]_MUX_288_o11 (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_lut<8>)
+     MUXCY:DI->O           1   0.145   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<8> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<9> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_cy<9>)
+     XORCY:CI->O           9   0.180   0.830  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_19_OUT_Madd_xor<10> (time_left[13]_PWR_1_o_mod_164/a[13]_GND_2_o_add_19_OUT<10>)
+     LUT6:I5->O           18   0.205   1.050  time_left[13]_PWR_1_o_mod_164/Mmux_a[10]_a[13]_MUX_300_o11 (time_left[13]_PWR_1_o_mod_164/a[10]_a[13]_MUX_300_o)
+     LUT6:I5->O            2   0.205   0.617  time_left[13]_PWR_1_o_mod_164/BUS_0011_INV_179_o2_SW4_SW0_SW0 (N816)
+     LUT6:I5->O           16   0.205   1.005  time_left[13]_PWR_1_o_mod_164/Mmux_a[5]_a[13]_MUX_319_o11 (time_left[13]_PWR_1_o_mod_164/a[5]_a[13]_MUX_319_o)
+     LUT6:I5->O            1   0.205   0.684  time_left[13]_PWR_1_o_mod_164/BUS_0012_INV_194_o2_SW0_SW4 (N917)
+     LUT6:I4->O            6   0.203   1.109  time_left[13]_PWR_1_o_mod_164/Mmux_a[4]_a[13]_MUX_334_o11 (time_left[13]_PWR_1_o_mod_164/a[4]_a[13]_MUX_334_o)
+     LUT6:I0->O           18   0.203   1.050  time_left[13]_PWR_1_o_mod_164/BUS_0013_INV_209_o2_SW0 (N62)
+     LUT6:I5->O            3   0.205   0.650  time_left[13]_PWR_1_o_mod_164/Mmux_a[0]_a[13]_MUX_352_o121 (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_27_OUT_Madd_lut<2>)
+     MUXCY:DI->O           1   0.145   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_27_OUT_Madd_cy<2> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_27_OUT_Madd_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_27_OUT_Madd_cy<3> (time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_27_OUT_Madd_cy<3>)
+     XORCY:CI->O           2   0.180   0.961  time_left[13]_PWR_1_o_mod_164/Madd_a[13]_GND_2_o_add_27_OUT_Madd_xor<4> (time_left[13]_PWR_1_o_mod_164/a[13]_GND_2_o_add_27_OUT<4>)
+     LUT5:I0->O            1   0.203   0.580  time_left[13]_PWR_1_o_mod_164/BUS_0015_INV_239_o26_SW0_SW0 (N376)
+     LUT6:I5->O            1   0.205   0.684  time_left[13]_PWR_1_o_mod_164/Mmux_o41_SW0 (N930)
+     LUT6:I4->O           11   0.203   0.882  time_left[13]_PWR_1_o_mod_164/Mmux_o41 (val3_3_OBUF)
+     OBUF:I->O                 2.571          val3_3_OBUF (val3<3>)
+    ----------------------------------------
+    Total                     21.435ns (6.705ns logic, 14.730ns route)
+                                       (31.3% logic, 68.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   20.233|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 27.00 secs
+Total CPU time to Xst completion: 27.30 secs
+ 
+--> 
+
+
+Total memory usage is 403632 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+
+

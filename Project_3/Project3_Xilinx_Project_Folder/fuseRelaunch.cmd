@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/melody/152a/Project_3_merge/tb_clk_div_100_isim_beh.exe" -prj "/home/melody/152a/Project_3_merge/tb_clk_div_100_beh.prj" "work.tb_clk_div_100" "work.glbl" 
