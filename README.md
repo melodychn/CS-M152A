@@ -1,4 +1,4 @@
-# CS M152A Introduction  to Digital Desgin Lab
+# CS M152A Introduction to Digital Design Lab
 My work for CS M152A in the Spring of 2020. 
 
 Taught by Professor Majid Sarrafzadeh. 
