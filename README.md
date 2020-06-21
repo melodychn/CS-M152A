@@ -1,5 +1,5 @@
 # CS M152A Introduction to Digital Design Lab
-My work for CS M152A in the Spring of 2020. 
+My work for CS M152A taken at UCLA in the Spring of 2020. 
 
 Taught by Professor Majid Sarrafzadeh. 
 
